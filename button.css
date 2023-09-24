@@ -3,9 +3,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
-  .button {
+.button {
     align-items: center;
     background-color: transparent;
     color:magenta;
@@ -20,9 +20,9 @@
     outline: 0;
     border: 0;
     padding: 1rem;
-  }
+}
 
-  .button:before {
+.button:before {
     background-color: magenta;
     content: "";
     display: inline-block;
@@ -30,22 +30,23 @@
     margin-right: 10px;
     transition: all .42s cubic-bezier(.25,.8,.25,1);
     width: 0;
-  }
+}
 
-  .button:hover:before {
+.button:hover:before {
     background-color: magenta;
     width: 3rem;
-  }
-  #scoring {
+}
+
+#scoring {
     text-align: center;
-  }
+}
 
-  /* styling label */
-  .toggle-switch{
+/* styling label */
+.toggle-switch{
     float:right;
-  }
+}
 
-  .toggle {
+.toggle {
     --width: 55px;
     --height: calc(var(--width) / 2);
 
@@ -56,15 +57,15 @@
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
     border-radius: var(--height);
     cursor: pointer;
-  }
+}
 
-  /* hiding checkbox */
-  .toggle input {
+/* hiding checkbox */
+.toggle input {
     display: none;
-  }
+}
 
-  /* Creating slider */
-  .toggle .slider {
+/* Creating slider */
+.toggle .slider {
     position: absolute;
     top: 0;
     left: 0;
@@ -73,8 +74,8 @@
     border-radius: var(--height);
     background-color: darkslategray;
     transition: all 0.4s ease-in-out;
-  }
-  .toggle .slider::before {
+}
+.toggle .slider::before {
     content: '';
     position: absolute;
     top: 0;
@@ -85,18 +86,19 @@
     background-color: aquamarine;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease-in-out;
-  }
+}
 
-  /* Adding slider effect */
-  .toggle input:checked + .slider {
+/* Adding slider effect */
+.toggle input:checked + .slider {
     background-color: thistle;
-  }
-  .toggle input:checked + .slider::before {
-    transform: translateX(calc(var(--width) - var(--height)));
-  }
+}
 
-  /* Adding text in the toggle button */
-  .toggle .toggle-labels {
+.toggle input:checked + .slider::before {
+    transform: translateX(calc(var(--width) - var(--height)));
+}
+
+/* Adding text in the toggle button */
+.toggle .toggle-labels {
     position: absolute;
     top: 8px;
     left: 0;
@@ -105,9 +107,9 @@
     font-size: 12px;
     font-family: sans-serif;
     transition: all 0.4s ease-in-out;
-  }
+}
 
-  .toggle .toggle-labels::after {
+.toggle .toggle-labels::after {
     content: attr(data-off);
     position: absolute;
     right: 8px;
@@ -115,9 +117,9 @@
     opacity: 1;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
     transition: all 0.4s ease-in-out;
-  }
+}
 
-  .toggle .toggle-labels::before {
+.toggle .toggle-labels::before {
     content: attr(data-on);
     position: absolute;
     left: 8px;
@@ -125,12 +127,16 @@
     opacity: 0;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
     transition: all 0.4s ease-in-out;
-  }
+}
 
-  .toggle input:checked~.toggle-labels::after {
+.toggle input:checked~.toggle-labels::after {
     opacity: 0;
-  }
+}
 
-  .toggle input:checked~.toggle-labels::before {
+.toggle input:checked~.toggle-labels::before {
     opacity: 1;
-  }
+}
+
+#footer{
+    color: aquamarine;
+}
