@@ -29,13 +29,14 @@ body{
   border-radius: 50%;
 }
 
+/*
 .piece.p1 {
   background-color: rgb(102, 230, 252);
 }
 
 .piece.p2 {
   background-color: rgb(250, 194, 90);
-}
+*/
 
 /* column-top is table row of clickable areas for each column */
 
@@ -47,7 +48,7 @@ body{
   background-color: magenta;;
 }
 
-#container {
+.container {
   display: flex;
   align-items: center;
   justify-content: center;

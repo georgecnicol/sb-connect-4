@@ -4,17 +4,22 @@
  * board fills (tie)
  **/
 
-let currPlayer = 1; // active player: 1 or 2
-
 class Game {
   constructor(){
     // board = array of rows, each row is array of cells  (board[y][x])
     // y - vertical from top, also number of which array in array of arrays
     // x - horizontal from left, which element in the chosen array [y]
+    const p1Color = document.getElementById('pl-1');
+    const p2Color = document.getElementById('pl-2');
+    const p1Name = document.getElementById('pl1-name');
+    const p2Name = document.getElementById('pl2-name');
     this.board = [];
     this.boardHeight = 6;
     this.boardWidth = 7;
     this.gameWon = false;
+    this.p1 = new Player(p1Color.value, p1Name.value);
+    this.p2 = new Player(p2Color.value, p2Name.value);
+    this.turn = this.p1;
     for (let y = 0; y < this.boardHeight; y++) {
       this.board.push(Array.from({ length: this.boardWidth }));
       // instead of [undefined, undefined, unde...]
@@ -55,8 +60,9 @@ class Game {
   placeInTable(y, x) {
     const piece = document.createElement('div');
     piece.classList.add('piece');
-    piece.classList.add(`p${currPlayer}`);
+    /// piece.classList.add(currPlayer.getClass); ///
     piece.style.top = -50 * (y + 2);
+    piece.style.backgroundColor = this.turn.getColor()
 
     const spot = document.getElementById(`${y}-${x}`);
     spot.append(piece);
@@ -82,13 +88,13 @@ class Game {
     }
     if(!this.gameWon){
       // place piece in board and add to HTML table
-      this.board[yLoc][xLoc] = currPlayer;
+      this.board[yLoc][xLoc] = this.turn;
       this.placeInTable(yLoc, xLoc);
 
       // check for win
       if (this.checkForWin()) {
         this.gameWon = true;
-        return this.endGame(`Player ${currPlayer} won!`);
+        return this.endGame(`${this.turn.getName()} won!`);
       }
 
       // check for tie
@@ -98,7 +104,7 @@ class Game {
       }
 
       // switch players
-      currPlayer = currPlayer === 1 ? 2 : 1;
+      this.turn = this.turn === this.p1 ? this.p2 : this.p1;
     }
   }
 
@@ -114,7 +120,7 @@ class Game {
           y < this.boardHeight &&
           x >= 0 &&
           x < this.boardWidth &&
-          this.board[y][x] === currPlayer
+          this.board[y][x] === this.turn
       );
     }
 
@@ -152,3 +158,15 @@ class Game {
   }
 }
 
+class Player{
+  constructor(color, name){
+    this.color = color;
+    this.name = name;
+  }
+  getName(){
+    return this.name;
+  }
+  getColor(){
+    return this.color;
+  }
+}
