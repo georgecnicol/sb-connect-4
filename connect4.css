@@ -1,4 +1,19 @@
 /* game board table */
+body{
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  color: magenta;
+}
+
+.title{
+  font-family: 'Bruno Ace';
+  font-size: 60px;
+  text-align: center;
+}
+
+#board{
+  margin-left:auto;
+  margin-right:auto;
+}
 
 #board td {
   width: 50px;
@@ -7,7 +22,6 @@
 }
 
 /* pieces are div within game table cells: draw as colored circles */
-
 .piece {
   margin: 5px;
   width: 80%;
@@ -16,11 +30,11 @@
 }
 
 .piece.p1 {
-  background-color: red;
+  background-color: rgb(102, 230, 252);
 }
 
 .piece.p2 {
-  background-color: blue;
+  background-color: rgb(250, 194, 90);
 }
 
 /* column-top is table row of clickable areas for each column */
@@ -30,8 +44,16 @@
 }
 
 #column-top td:hover {
-  background-color: gold;
+  background-color: magenta;;
 }
 
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-
+#game {
+  width: 50%;
+  height: 50%;
+}

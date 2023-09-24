@@ -2,7 +2,10 @@
 <head>
   <title>Connect Four</title>
   <link href="connect4.css" rel="stylesheet">
+  <link href="button.css" rel="stylesheet">
   <link href="darkmode.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&amp;family=Mukta:wght@300" rel="stylesheet">
 </head>
 <body>
   <!-- dark mode stuff -->
@@ -17,12 +20,22 @@
     </div>
   </li>
   </ul>
+<h1 class="title">CONNECT 4</h1>
 
+<div id="container">
 <div id="game">
   <table id="board"></table>
 </div>
+</div>
+
+<div class="button-container">
+  <button class="button" id="start">Start</button>
+</div>
+
+
 
 <script src="connect4.js"></script>
+<script src="button.js"></script>
 <script src="darkmode.js"></script>
 
 </body>
